@@ -191,6 +191,29 @@ class Theme(Enum):
             fh.Script(src=urls['tailwind']),
             fh.Style("""
     @import "tailwindcss";
+    
+    @theme {
+        --color-background: oklch(from var(--background) l c h);
+        --color-foreground: oklch(from var(--foreground) l c h);
+        --color-border: oklch(from var(--border) l c h);
+        --color-input: oklch(from var(--input) l c h);
+        --color-ring: oklch(from var(--ring) l c h);
+        --color-primary: oklch(from var(--primary) l c h);
+        --color-primary-foreground: oklch(from var(--primary-foreground) l c h);
+        --color-secondary: oklch(from var(--secondary) l c h);
+        --color-secondary-foreground: oklch(from var(--secondary-foreground) l c h);
+        --color-muted: oklch(from var(--muted) l c h);
+        --color-muted-foreground: oklch(from var(--muted-foreground) l c h);
+        --color-accent: oklch(from var(--accent) l c h);
+        --color-accent-foreground: oklch(from var(--accent-foreground) l c h);
+        --color-destructive: oklch(from var(--destructive) l c h);
+        --color-destructive-foreground: oklch(from var(--destructive-foreground) l c h);
+        --color-card: oklch(from var(--card) l c h);
+        --color-card-foreground: oklch(from var(--card-foreground) l c h);
+        --color-popover: oklch(from var(--popover) l c h);
+        --color-popover-foreground: oklch(from var(--popover-foreground) l c h);
+    }
+    
     @custom-variant dark (&:where(.dark, .dark *));
     """, type="text/tailwindcss"),
             _headers_theme(self.value, mode=mode, radii=radii, shadows=shadows, font=font),
