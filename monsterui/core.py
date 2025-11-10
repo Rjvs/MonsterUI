@@ -83,16 +83,16 @@ def _headers_theme(color, mode='auto', radii=ThemeRadii.sm, shadows=ThemeShadows
 
 # %% ../nbs/01_core.ipynb
 HEADER_URLS = {
-        'franken_css': "https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css",
-        'franken_js_core': "https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js",
-        'franken_icons': "https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js",
-        'tailwind': "https://cdn.tailwindcss.com/3.4.17",
-        'daisyui': "https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css",
-        'apex_charts': "https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/chart.iife.js",
-        'highlight_js': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js",
-        'highlight_python': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js",
-        'highlight_light_css': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-light.css",
-        'highlight_dark_css': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.css",
+        'franken_css': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/css/core.min.css",
+        'franken_js_core': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/core.iife.js",
+        'franken_icons': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/icon.iife.js",
+        'tailwind': "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        'daisyui': "https://cdn.jsdelivr.net/npm/daisyui@5.4.7/daisyui.css",
+        'apex_charts': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/chart.iife.js",
+        'highlight_js': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js",
+        'highlight_python': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/languages/python.min.js",
+        'highlight_light_css': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/atom-one-light.css",
+        'highlight_dark_css': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/atom-one-dark.css",
         'highlight_copy': "https://cdn.jsdelivr.net/gh/arronhunt/highlightjs-copy/dist/highlightjs-copy.min.js",
         'highlight_copy_css': "https://cdn.jsdelivr.net/gh/arronhunt/highlightjs-copy/dist/highlightjs-copy.min.css",
 }
@@ -189,11 +189,10 @@ class Theme(Enum):
             fh.Link(rel="stylesheet", href=urls['franken_css']),
             fh.Script(type="module", src=urls['franken_js_core']),
             fh.Script(src=urls['tailwind']),
-            fh.Script("""
-    tailwind.config = {
-        darkMode: 'selector',
-    }
-    """),
+            fh.Style("""
+    @import "tailwindcss";
+    @custom-variant dark (&:where(.dark, .dark *));
+    """, type="text/tailwindcss"),
             _headers_theme(self.value, mode=mode, radii=radii, shadows=shadows, font=font),
             scrollspy_style]
 
@@ -233,10 +232,10 @@ class Theme(Enum):
         if katex:
             hdrs += [
                 fh.Link(rel="stylesheet",
-                        href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"),
+                        href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"),
                 fh.Script("""
-                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';
-                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';
+                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.mjs';
+                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.mjs';
                 const options = {
                   delimiters: [
                     {left: '$$', right: '$$', display: true},
