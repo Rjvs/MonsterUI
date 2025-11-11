@@ -187,14 +187,9 @@ class Theme(Enum):
     def _create_headers(self, urls, mode='auto', icons=True, daisy=True, highlightjs=False, katex=False, apex_charts=False, radii=ThemeRadii.sm, shadows=ThemeShadows.sm, font=ThemeFont.sm):
         "Create header elements with given URLs"
         
-        # FrankenUI utilities wrapped in @layer
-        franken_utilities_style = fh.Style(f"""
-@import url('{urls['franken_utilities']}') layer(utilities);
-""")
-        
         hdrs = [
             fh.Link(rel="stylesheet", href=urls['franken_css']),
-            franken_utilities_style,
+            fh.Link(rel="stylesheet", href=urls['franken_utilities']),
         ]
         
         # DaisyUI must come before Tailwind for v4
