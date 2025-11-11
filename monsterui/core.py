@@ -109,6 +109,7 @@ def _download_resource(url, static_dir):
 # %% ../nbs/01_core.ipynb
 daisy_styles = Style("""
 :root {
+  prefersdark: false;
   color-scheme: light;
   --color-base-100: oklch(from hsl(var(--background)) l c h);
   --color-base-200: oklch(from hsl(var(--card)) l c h);
@@ -136,6 +137,7 @@ daisy_styles = Style("""
 }
 
 .dark {
+  prefersdark: true;
   color-scheme: dark;
   --color-base-100: oklch(from hsl(var(--background)) l c h);
   --color-base-200: oklch(from hsl(var(--card)) l c h);
