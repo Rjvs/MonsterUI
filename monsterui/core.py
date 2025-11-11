@@ -88,7 +88,7 @@ HEADER_URLS = {
         'franken_js_core': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/core.iife.js",
         'franken_icons': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/icon.iife.js",
         'tailwind': "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
-        'daisyui': "https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.min.css",
+        'daisyui': "https://cdn.jsdelivr.net/npm/daisyui@5",
         'apex_charts': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/chart.iife.js",
         'highlight_js': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js",
         'highlight_python': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js",
