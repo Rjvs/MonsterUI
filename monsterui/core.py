@@ -108,7 +108,7 @@ def _download_resource(url, static_dir):
 
 # %% ../nbs/01_core.ipynb
 daisy_styles = Style("""
-:root {
+:root,[data-theme="frankenui"] {
   prefersdark: false;
   color-scheme: light;
   --color-base-100: oklch(from hsl(var(--background)) l c h);
@@ -136,7 +136,7 @@ daisy_styles = Style("""
   --radius-box: var(--radius);
 }
 
-.dark {
+.dark,[data-theme="frankenui-dark"] {
   prefersdark: true;
   color-scheme: dark;
   --color-base-100: oklch(from hsl(var(--background)) l c h);
