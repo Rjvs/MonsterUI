@@ -68,6 +68,12 @@ def _headers_theme(color, mode='auto', radii=ThemeRadii.sm, shadows=ThemeShadows
         const fontClass = stored.font || "{font}";
         htmlElement.classList.add(themeClass, radiiClass, shadowClass, fontClass);
         htmlElement.dataset.depth = shadowClass.includes("none") ? "flat" : "raised";
+        
+        // Set alpha values based on mode
+        const borderAlpha = isDark ? "0.75" : "0.3";
+        const inputAlpha = isDark ? "0.75" : "0.4";
+        htmlElement.style.setProperty("--border-alpha", borderAlpha);
+        htmlElement.style.setProperty("--input-alpha", inputAlpha);
     ''')
 
 # %% ../nbs/01_core.ipynb
