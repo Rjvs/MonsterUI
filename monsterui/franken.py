@@ -1630,7 +1630,7 @@ def ApexChart(*,
     return Div(Uk_chart(js), cls=stringify(cls), **kws)
 
 # %% ../nbs/02_franken.ipynb
-spy_js = '''
+spy_js = r'''
 const slug = (s) => s.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
 const frag = document.createDocumentFragment();
 
@@ -1645,6 +1645,7 @@ document.querySelector('%s').querySelectorAll('%s').forEach(h => {
 });
 document.querySelector('#%s .uk-nav').append(frag);
 '''
+
 
 # %% ../nbs/02_franken.ipynb
 def ScrollSpy(headings=[1,2,3,4,5],       # Heading levels to map section/links from
