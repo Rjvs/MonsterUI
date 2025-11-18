@@ -24,10 +24,14 @@ def _not_found(req, exc):
         None)
 
 
-app,rt = fast_app(exception_handlers={404:_not_found}, pico=False, 
-                  hdrs=(*Theme.blue.headers(highlightjs=True,apex_charts=True), Link(rel="icon", type="image/x-icon", href="/favicon.ico"),
-                        Link(rel="stylesheet", href="/custom_theme.css", type="text/css")), 
-                  )
+# Choose your asset loading strategy:
+# Option 1: Vite-built assets (Tailwind 4 + FrankenUI 2.1.1 + DaisyUI 5, optimized)
+built_hdrs = (*Theme.blue.built_headers(highlightjs=True,apex_charts=True), Link(rel="icon", type="image/x-icon", href="/favicon.ico"), Link(rel="stylesheet", href="/custom_theme.css", type="text/css"))
+
+# Option 2: CDN assets (current default)
+cdn_hdrs = (*Theme.blue.headers(highlightjs=True,apex_charts=True), Link(rel="icon", type="image/x-icon", href="/favicon.ico"), Link(rel="stylesheet", href="/custom_theme.css", type="text/css"))
+
+app,rt = fast_app(exception_handlers={404:_not_found}, pico=False, hdrs=built_hdrs)
 
 def is_htmx(request=None): 
     "Check if the request is an HTMX request"

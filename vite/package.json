@@ -1,0 +1,30 @@
+{
+  "name": "monsterui-vite-assets",
+  "version": "1.0.0",
+  "description": "Vite build system for MonsterUI assets",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "autoprefixer": "^10.4.22",
+    "daisyui": "^5.5.5",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1",
+    "postcss-nesting": "^13.0.2",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "daisyui": "^5.5.5",
+    "franken-ui": "^2.1.1",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^27.2.0"
+  }
+}

@@ -7,7 +7,11 @@ from monsterui.all import *
 import calendar
 from datetime import datetime
 
-app, rt = fast_app(hdrs=Theme.blue.headers())
+# Use Vite-built assets for optimal performance (Tailwind 4 + FrankenUI 2.1.1 + DaisyUI 5)
+app, rt = fast_app(hdrs=Theme.blue.built_headers())
+
+# Alternative: Use CDN assets (traditional approach)
+# app, rt = fast_app(hdrs=Theme.blue.headers())
 
 CreateAccount = Card(
     Grid(Button(DivLAligned(UkIcon('github'),Div('Github'))),Button('Google')),

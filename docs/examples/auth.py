@@ -4,7 +4,11 @@ from fasthtml.common import *
 from monsterui.all import *
 from fasthtml.svg import *
 
-app, rt = fast_app(hdrs=Theme.blue.headers())
+# Use Vite-built assets for optimal performance (Tailwind 4 + FrankenUI 2.1.1 + DaisyUI 5)
+app, rt = fast_app(hdrs=Theme.blue.built_headers())
+
+# Alternative: Use CDN assets (traditional approach)
+# app, rt = fast_app(hdrs=Theme.blue.headers())
 
 @rt
 def index():    

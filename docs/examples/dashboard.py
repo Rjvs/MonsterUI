@@ -9,6 +9,10 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 
+# Use Vite-built assets for optimized loading (Tailwind 4 + FrankenUI 2.1.1 + DaisyUI 5)
+# app, rt = fast_app(hdrs=Theme.blue.built_headers())
+
+# Use traditional CDN assets
 app, rt = fast_app(hdrs=Theme.blue.headers())
 
 def generate_chart(num_points=30):

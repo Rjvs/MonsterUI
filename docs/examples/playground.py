@@ -4,6 +4,10 @@ from fasthtml.common import *
 from monsterui.all import *
 from fasthtml.svg import *
 
+# Option 1: Use Vite-built assets (Tailwind 4 + FrankenUI 2.1.1 + DaisyUI 5, optimized)
+# app, rt = fast_app(hdrs=Theme.blue.built_headers())
+
+# Option 2: Use CDN assets (traditional approach)
 app, rt = fast_app(hdrs=Theme.blue.headers())
 
 preset_options = ["Grammatical Standard English", "Summarize for a 2nd grader",
