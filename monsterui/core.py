@@ -76,7 +76,82 @@ HEADER_URLS = {
         'franken_js_core': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/core.iife.js",
         'franken_icons': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/icon.iife.js",
         'tailwind': "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
-        'daisyui': "https://cdn.jsdelivr.net/npm/daisyui@5",
+        'daisyui': """https://cdn.jsdelivr.net/combine/
+npm/daisyui@5/base/properties.css,
+npm/daisyui@5/base/rootcolor.css,
+npm/daisyui@5/base/rootscrollgutter.css,
+npm/daisyui@5/base/rootscrolllock.css,
+npm/daisyui@5/base/svg.css,
+npm/daisyui@5/colors/properties.css,
+npm/daisyui@5/colors/properties-extended.css,
+npm/daisyui@5/colors/responsive.css,
+npm/daisyui@5/colors/responsive-extended.css,
+npm/daisyui@5/colors/states.css,
+npm/daisyui@5/colors/states-extended.css,
+npm/daisyui@5/components/alert.css,
+npm/daisyui@5/components/avatar.css,
+npm/daisyui@5/components/badge.css,
+npm/daisyui@5/components/breadcrumbs.css,
+npm/daisyui@5/components/button.css,
+npm/daisyui@5/components/calendar.css,
+npm/daisyui@5/components/card.css,
+npm/daisyui@5/components/carousel.css,
+npm/daisyui@5/components/chat.css,
+npm/daisyui@5/components/checkbox.css,
+npm/daisyui@5/components/collapse.css,
+npm/daisyui@5/components/countdown.css,
+npm/daisyui@5/components/diff.css,
+npm/daisyui@5/components/divider.css,
+npm/daisyui@5/components/dock.css,
+npm/daisyui@5/components/drawer.css,
+npm/daisyui@5/components/dropdown.css,
+npm/daisyui@5/components/fab.css,
+npm/daisyui@5/components/fieldset.css,
+npm/daisyui@5/components/fileinput.css,
+npm/daisyui@5/components/filter.css,
+npm/daisyui@5/components/footer.css,
+npm/daisyui@5/components/hero.css,
+npm/daisyui@5/components/hover3d.css,
+npm/daisyui@5/components/hovergallery.css,
+npm/daisyui@5/components/indicator.css,
+npm/daisyui@5/components/input.css,
+npm/daisyui@5/components/kbd.css,
+npm/daisyui@5/components/label.css,
+npm/daisyui@5/components/link.css,
+npm/daisyui@5/components/list.css,
+npm/daisyui@5/components/loading.css,
+npm/daisyui@5/components/mask.css,
+npm/daisyui@5/components/menu.css,
+npm/daisyui@5/components/mockup.css,
+npm/daisyui@5/components/modal.css,
+npm/daisyui@5/components/navbar.css,
+npm/daisyui@5/components/progress.css,
+npm/daisyui@5/components/radialprogress.css,
+npm/daisyui@5/components/radio.css,
+npm/daisyui@5/components/range.css,
+npm/daisyui@5/components/rating.css,
+npm/daisyui@5/components/select.css,
+npm/daisyui@5/components/skeleton.css,
+npm/daisyui@5/components/stack.css,
+npm/daisyui@5/components/stat.css,
+npm/daisyui@5/components/status.css,
+npm/daisyui@5/components/steps.css,
+npm/daisyui@5/components/swap.css,
+npm/daisyui@5/components/tab.css,
+npm/daisyui@5/components/table.css,
+npm/daisyui@5/components/textarea.css,
+npm/daisyui@5/components/textrotate.css,
+npm/daisyui@5/components/timeline.css,
+npm/daisyui@5/components/toast.css,
+npm/daisyui@5/components/toggle.css,
+npm/daisyui@5/components/tooltip.css,
+npm/daisyui@5/components/validator.css,
+npm/daisyui@5/theme/light.css,
+npm/daisyui@5/theme/dark.css,
+npm/daisyui@5/utilities/glass.css,
+npm/daisyui@5/utilities/join.css,
+npm/daisyui@5/utilities/radius.css,
+npm/daisyui@5/utilities/typography.css""",
         'apex_charts': "https://cdn.jsdelivr.net/npm/franken-ui@2.1.1/dist/js/chart.iife.js",
         'highlight_js': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js",
         'highlight_python': "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js",
@@ -98,7 +173,7 @@ def _download_resource(url, static_dir):
 daisy_styles = Style("""
 :root {
   --b1: hsl(var(--background));
-  --bc: hsl(var(--foreground));
+  --bc: hsl(var(--background));
   --m: hsl(var(--muted));
   --mc: hsl(var(--muted-foreground));
   --po: hsl(var(--popover));
@@ -122,6 +197,26 @@ daisy_styles = Style("""
   --ch4: hsl(var(--chart-4));
   --ch5: hsl(var(--chart-5));
   --rd: var(--radius);
+  --color-base-100: hsl(var(--background));
+  --color-base-200: hsl(var(--card));
+  --color-base-300: hsl(var(--ring));
+  --color-base-content: hsl(var(--background));
+  --color-primary: hsl(var(--primary));
+  --color-primary-content: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-content: hsl(var(--secondary-foreground);
+  --color-accent: hsl(var(--accent));
+  --color-accent-content: hsl(var(--accent-foreground));
+  --color-neutral: oklch(20% 0.024 255.701);
+  --color-neutral-content: oklch(89.499% 0.011 252.096);
+  --color-info: hsl(var(--input));
+  --color-info-content: oklch(0% 0 0);
+  --color-success: oklch(64.8% 0.15 160);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(84.71% 0.199 83.87);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: hsl(var(--destructive));
+  --color-error-content: hsl(var(--destructive-foreground));
 }
 """)
 
