@@ -9,3 +9,12 @@ dynamic = [ "keywords", "description", "version", "dependencies", "optional-depe
 
 [tool.uv]
 cache-keys = [{ file = "pyproject.toml" }, { file = "settings.ini" }, { file = "setup.py" }]
+
+[dependency-groups]
+dev = [
+    "nbdev",
+    "jupyter",
+    "notebook",
+    "ipykernel",
+    "tinycss2",
+]
